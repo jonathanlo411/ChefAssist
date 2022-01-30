@@ -13,8 +13,8 @@ In order to run ChefAssist locally, you will need its dependencies and an Assemb
  3. Create a `config.txt` and input the Assembly AI Key according to `config.text.example`
  5. Start local server using: 
   ```
-  npm runserver
-  npm runclient
+  npm run server
+  npm run client
   ```
 
 
