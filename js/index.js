@@ -34,11 +34,16 @@ const ingredients = ["4 Tablespoons butter or olive oil",
   "1/2 teaspoon freshly-cracked black pepper"
 ]
 
+const regex = /[^A-Za-z0-9]/g;
+
 function queryIngredient(words) {
   console.log(words);
   ingredients.forEach(function (item, index) {
     ingredientsList = item.split(' ');
-    const filteredArray = ingredientsList.filter(value => words.includes(value));
+    const cleanedIngredients = ingredientsList.map(element => {
+      return element.replace(regex, "");
+    });
+    const filteredArray = cleanedIngredients.filter(value => words.includes(value));
     console.log(filteredArray);
     if (filteredArray.length > 0) {
       return item[index];
@@ -46,19 +51,6 @@ function queryIngredient(words) {
   });
   return null;
 }
-
-function queryIngredient2(words) {
-  console.log(words);
-  const test1 = ingredients.some(el => words.includes(el));
-    if (test1) {
-      return item[index];
-    }
-  return null;
-}
-
-let temp = ['', 'I', 'love', 'garlic'];
-
-console.log(queryIngredient(temp));
 
 // runs real-time transcription and handles global variables
 const run = async () => {
