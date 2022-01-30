@@ -47,7 +47,7 @@ button:hover {
 
 .page-container {
   height: 100vh;
-  border: 3px solid red;
+  border: 3px solid #c86868;
 }
 
 #recipe-list-container {
