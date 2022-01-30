@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/styles.css"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/landing.css">
+    <script defer src="./js/modal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <title>SoushiChef</title>
 </head>
-<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 <body>
-  <header>
-    <h1 class="header__title">Real-Time Transcription</h1>
-    <p class="header__sub-title">Try AssemblyAI's new real-time transcription endpoint!</p>
-  </header>
-  <div class="real-time-interface">
-    <p id="real-time-title" class="real-time-interface__title">Click start to begin recording!</p>
-    <p id="button" class="real-time-interface__button">Start</p>
-    <p id="message" class="real-time-interface__message"></p>
-  </div>
-  <script src="./js/index.js"></script>
+    <section id="first-page" class="page-container">
+      <h2 id="title">Welcome to SoushiChef!</h2>
+      <h4>Your personal Sous Chef</h4>
+      <button onclick="document.getElementById('second-page').scrollIntoView()">Enter</button>
+    </section>
+
+    <section id="second-page" class="page-container">
+      
+      <section id="recipe-list-container">
+
+        <div class="section-header">
+          <img src="./assets/doughnut.png" class="mini-graphic">
+          <h2>Recipes</h2>
+          <img src="./assets/doughnut.png" class="mini-graphic">
+        </div>
+        
+        <div id="recipe-list">
+          <!-- Sample Card -->
+          <div class="card" data-modal="recipeModal{{recipe.id}}">
+            <div class="fpicwrap">
+                <img class="fpic" src="{{ recipe.image }}">
+            </div>
+            <div class="finfo">
+                <h3 class="ftitle">Chicken Pot Pie Soup</h3>
+                <p class="fdesc">This Chicken Pot Pie Soup recipe is simple to make, lightened up with a few easy tweaks, and deliciously rich and creamy.</p>
+            </div>
+          </div>
+
+        <!-- The Modal -->
+        <div id="recipeModal{{recipe.id}}" class="modal">
+            <div class="modal-content">
+            <span class="close" data-modal="recipeModal{{recipe.id}}">&times;</span>
+            <div class="daiwrap">
+                <div class="ppicwrap">
+                    <img class="ppic" src="{{ recipe.image }}">
+                </div>
+                <div class="pinfo">
+                    <h2 class="ptitle">Chicken Pot Pie Soup</h2>
+                    <h4 class="psub">Time: 35 minutes</h4>
+                    <p class="pdesc">This Chicken Pot Pie Soup recipe is simple to make, lightened up with a few easy tweaks, and deliciously rich and creamy.</p>
+                </div>
+                <div class="ing">
+                    <h4 class="pingt">Ingredients</h4>
+                    <div class="ingsec">
+                    {% for ing in recipe.ingredients %}
+                        <h6 class="ingitem">{{ ing }}</h6>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <button class="cookbtn" data-name="{{ recipe.name }}" onclick="location.href = '/cook'">Cook</button>
+            </div>
+        </div>
+        </div>
+
+      </section>
+
+    </section>
+    
+
+
+
+    
 </body>
 </html>

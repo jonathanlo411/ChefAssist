@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy:400&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #c86868;
+  font-family: "Roboto";
+  color: #ffe4e1;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Satisfy";
+  font-size: 8vh;
+  margin-top: 3vh;
+}
+
+h4 {
+  margin-top: 5vh;
+  font-size: 5vh;
+}
+
+button {
+  margin-top: 6vh;
+  font-size: 3vh;
+  border-style: none;
+  border-radius: 50px;
+  border: 1px solid #ffe4e1;
+  padding: 1% 5%;
+  color: #ffe4e1;
+  background-color: #c86868;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.page-container {
+  height: 100vh;
+  border: 3px solid red;
+}
+
+#recipe-list-container {
+  height: 90vh;
+  margin: 5vh;
+  border-radius: 5vh;
+  background-color: #ff9d9b;
+  text-align: center;
+}
+
+#recipe-list {
+  margin: 5vh auto;
+  width: 100%;
+}
+
+#title {
+  font-family: "Satisfy";
+  margin-top: 27vh;
+  font-size: 13vh;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mini-graphic {
+  height: 10vh;
+  width: 10vh;
+  margin-top: 3vh;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 1.5vh auto;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 2%;
+  overflow: hidden;
+  text-align: left;
+  color: black;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card .fpicwrap {
+  flex: 3;
+  max-width: 30%;
+}
+
+.card .fpicwrap img {
+  object-fit: scale-down;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card .finfo {
+  flex: 7;
+  padding-left: 2%;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15vh auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+  color: black;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content .daiwrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-content .ppicwrap {
+  flex: 3;
+  max-width: 30%;
+}
+
+.modal-content .ppicwrap img {
+  object-fit: scale-down;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-content .pinfo {
+  flex: 4.5;
+  text-align: left;
+  padding: 2%;
+}
+
+.pinfo .ptitle {
+  font-size: 6vh;
+  font-weight: bold;
+}
+
+.pinfo .psub {
+  font-size: 4vh;
+}
+
+.pinfo .pdesc {
+  font-size: 3vh;
+}
+
+.ing {
+  flex: 2.5;
+  text-align: left;
+  background-color: var(--c2);
+  border-radius: 15px;
+  padding: 2%;
+}
+
+.ing .pingt {
+  font-size: 5vh;
+  text-align: center;
+}
+
+.ing .ingsec {
+  margin-top: 1vh;
+  height: 45vh;
+  overflow: auto;
+}
+
+.ingsec::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ingsec::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--c3);
+}
+
+.ing .ingsec h6 {
+  font-size: 2.5vh;
+}
+
+.cookbtn {
+  background-color: #c86868;
+  color: white;
+  padding: 1.5% 4%;
+  border: 1px solid white;
+  border-radius: 500px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.cookbtn:hover {
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #c86868;
+  color: #c86868;
+}
