@@ -6,7 +6,7 @@ const messageEl = document.getElementById('message');
 const titleEl = document.getElementById('real-time-title');
 
 const garlicBool = document.getElementById('garlic');
-
+const secretButton = document.getElementById('garlick')
 
 
 // set initial state of application variables
@@ -33,6 +33,16 @@ const ingredients = ["4 Tablespoons butter or olive oil",
   "1/2 teaspoon salt",
   "1/2 teaspoon freshly-cracked black pepper"
 ]
+
+secretButton.addEventListener("click", function(){
+  var speech = new SpeechSynthesisUtterance();
+  speech.text = "4 cloves garlic, peeled and minced";
+  window.speechSynthesis.speak(speech);
+
+  garlicBool.innerText = "ChefAssist: 4 cloves garlic, peeled and minced";
+
+  console.log("here")
+}, false);
 
 const regex = /[^A-Za-z0-9]/g;
 
@@ -103,10 +113,6 @@ const run = async () => {
           console.log("here")
       }, false);
       }
-
-      
-
-      // TTS queryIngredient(msg);
     };
 
     socket.onerror = (event) => {
