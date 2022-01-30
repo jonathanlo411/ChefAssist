@@ -1,54 +1,58 @@
-header {
-  background: #09032f;
+@import url(https://fonts.googleapis.com/css?family=Satisfy:400&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400&subset=latin,latin-ext);
+
+* {
+  box-sizing: border-box;
+  margin: 5%;
+}
+
+body {
+  background-color: #c86868;
+  font-family: "Roboto";
+  color: #ffe4e1;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 5vh;
+  font-size: 6vh;
+}
+
+h2 {
+  margin-top: 1vh;
+  font-size: 4vh;
+}
+
+#button {
+  background-color: #ffe4e1;
+  border: 1px solid black;
+  padding: 0.5% 2.5%;
+  border-radius: 200px;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+#button:hover {
+  background-color: #c86868;
+  flood-color: #ffe4e1;
+  border: 1px solid white;
   color: white;
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 2.5%;
-  box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
 }
 
-.header__title {
-  font-size: 35px;
-  font-weight: 400;
-  margin-bottom: .20em;
+#you {
+  color: black;
+  width: 50%;
+  margin: auto;
+  background-color: #ffe4e1;
+  border-radius: 200px;
+  padding: 1.5% 6%;
 }
 
-.header__sub-title {
-  font-size: 18px;
-  font-weight: 200;
-}
-
-.real-time-interface {
-  padding: 1.25% 0 0 2.5%;
-}
-
-.real-time-interface__button {
-  display: flex;
-  padding: .5em;
-  border-radius: .5rem;
-  justify-content: center;
-  cursor: pointer;
-  background: #6b2bd6;
-  color: white;
-  width: 5%;
-  font-size: 18px;
-}
-
-.real-time-interface__title {
-  margin-bottom: .5em;
-  font-size: 18px;
-  font-weight: 525;
-}
-
-.real-time-interface__message {
-  text-align: left;
-  width: 95%;
-  margin-top: .5em;
-  font-size: 19px;
-  font-weight: 400;
-  box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
-  padding: 1em;
-  transition: .5s ease-in;
+#ca {
+  color: black;
+  width: 50%;
+  margin: 5% auto;
+  background-color: #ffe4e1;
+  border-radius: 200px;
+  padding: 1.5% 6%;
 }
